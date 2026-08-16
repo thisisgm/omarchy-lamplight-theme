@@ -1,5 +1,5 @@
 # The bar is chrome, not canvas. In the source UI the sidebar sits a step
-# DARKER than the content it frames (#111111 under #151515) — that inversion
+# DARKER than the content it frames (#111111 under #151515), and that inversion
 # of the usual "chrome is lighter" habit is most of why the app reads calm.
 # Bar text uses the warm chrome ink, so the bar never competes with the
 # neutral content ink inside your windows.

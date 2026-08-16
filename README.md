@@ -28,7 +28,7 @@ background measures 14.77:1.
 
 Hand-placing the ANSI colours on a uniform-lightness ring looked coherent and
 failed in use. Red sat 0.056 from the accent in OKLab, cyan drifted toward
-green, and under deuteranopia a diff's `+` and `-` lines were 0.030 apart —
+green, and under deuteranopia a diff's `+` and `-` lines were 0.030 apart,
 close enough to be the same colour.
 
 Solving for maximum worst-case separation instead lifts the tightest pair to
@@ -45,18 +45,18 @@ Five wallpapers, each a different geometry, all rendered natively at
 
 | File | Geometry | Mean luminance |
 |------|----------|----------------|
-| `1-terminator.png` | Gradient — one light source, one falloff | 0.0089 |
-| `2-ladder.png` | Flat planes — the surface ladder made literal | 0.0078 |
-| `3-aperture.png` | Circle — one ring on near-empty ground | 0.0045 |
-| `4-lattice.png` | Point grid — dots that report where the light is | 0.0042 |
-| `5-fold.png` | Facets — folded paper under a raking light | 0.0072 |
+| `1-terminator.png` | Gradient: one light source, one falloff | 0.0089 |
+| `2-ladder.png` | Flat planes: the surface ladder made literal | 0.0078 |
+| `3-aperture.png` | Circle: one ring on near-empty ground | 0.0045 |
+| `4-lattice.png` | Point grid: dots that report where the light is | 0.0042 |
+| `5-fold.png` | Facets: folded paper under a raking light | 0.0072 |
 
 They are procedural rather than photographic, which is what lets them hold to
 the palette exactly:
 
 - **Composed in Oklab.** Blending in sRGB drags a midpoint toward grey, which
-  is the muddy zone a warm-on-black gradient has to cross. Mixing in Oklab —
-  the space the palette itself was solved in — keeps the accent's chroma all
+  is the muddy zone a warm-on-black gradient has to cross. Mixing in Oklab,
+  the space the palette itself was solved in, keeps the accent's chroma all
   the way down to black.
 - **Dithered at one LSB.** A near-black gradient across 6016 pixels has fewer
   distinct 8-bit values than it has room for, which is what produces visible

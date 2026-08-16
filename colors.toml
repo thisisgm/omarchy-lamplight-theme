@@ -1,4 +1,4 @@
-# Lamplight — a dark theme where warmth is light, never tint.
+# Lamplight: a dark theme where warmth is light, never tint.
 #
 # Surfaces were measured off the Claude desktop UI; everything after that is
 # solved rather than sampled.
@@ -19,11 +19,11 @@
 
 mode = "dark"
 
-# The clay accent. Focus, selection, active borders — nothing else.
+# The clay accent. Focus, selection, active borders, nothing else.
 accent = "#d97757"
 
 selection = "#3a3a38"
-muted     = "#7a7a75"   # ANSI bright-black / comments — 4.2:1, legible but recessed
+muted     = "#7a7a75"   # ANSI bright-black / comments, 4.2:1, legible but recessed
 
 # Surface ladder. Pure neutral. Depth comes from even L* steps
 # (3.0 → 5.1 → 6.8 → 11.3), not from shadows or borders.
@@ -34,9 +34,9 @@ lighter_background = "#1e1e1e"   # raised: inputs, cards
 
 # Ink. Content stays neutral; chrome and secondary text warm up as they dim,
 # which is what keeps dim text from reading as dead grey.
-foreground        = "#e7e7e7"   # content ink — neutral by design
+foreground        = "#e7e7e7"   # content ink, neutral by design
 bright_foreground = "#f1f1e8"   # warm white, the colour of manilla paper
-light_foreground  = "#c3c2b8"   # chrome ink — the warm off-white of the UI
+light_foreground  = "#c3c2b8"   # chrome ink, the warm off-white of the UI
 dark_foreground   = "#8d8d89"   # secondary / dimmed
 
 # ANSI ring at uniform C 0.125, with lightness and hue SOLVED rather than
@@ -48,7 +48,7 @@ dark_foreground   = "#8d8d89"   # secondary / dimmed
 # one family; only lightness and hue do the separating.
 red     = "#d76563"   # exempt: C 0.145, since an error that fails to alarm has failed
 yellow  = "#c68f32"
-orange  = "#d97757"   # the accent — the palette's orange is its accent
+orange  = "#d97757"   # the accent: the palette's orange is its accent
 green   = "#78bd74"
 cyan    = "#1fb5bc"   # held at L 0.706; the solver wanted 0.75 and went electric
 blue    = "#648ad8"
@@ -68,6 +68,6 @@ bright_blue    = "#7fa5f1"
 bright_magenta = "#d89ce4"
 
 # The focused window is the only window wearing colour. Unfocused edges are
-# felt rather than seen — 1.2:1 against the canvas.
+# felt rather than seen, 1.2:1 against the canvas.
 hyprland_active_border   = "rgb(d97757)"
 hyprland_inactive_border = "rgb(262626)"

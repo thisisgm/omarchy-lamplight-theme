@@ -4,7 +4,7 @@
 #   active-border            -> transient, wants you (notifications, popups,
 #                               polkit, the lock input). Keeps the accent.
 #   active-border-foreground -> persistent cards you opened on purpose
-#                               (launcher, menus, tooltips). Goes neutral —
+#                               (launcher, menus, tooltips). Goes neutral,
 #                               a terracotta outline around a full-screen
 #                               launcher would be the loudest thing on screen,
 #                               and it would be announcing something you

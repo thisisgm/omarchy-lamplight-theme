@@ -1,7 +1,7 @@
 # Control states, quietest to loudest: normal < hover < selected < focus.
 #
 # The stock template deliberately makes focus identical to hover. That is a
-# defensible default and a bad one for keyboard users — it leaves no way to
+# defensible default and a bad one for keyboard users, since it leaves no way to
 # tell "the mouse is over this" from "typing goes here". Focus gets the clay
 # accent, and it is the only state that does. Resting chrome is pulled well
 # below the default so the accent has room to register.
@@ -25,7 +25,7 @@ focus-border       = "accent"
 focus-border-width = 1
 focus-border-alpha = 0.95
 
-# Persistent selection reads as brighter ink, not as more colour — colour is
+# Persistent selection reads as brighter ink, not as more colour, because colour is
 # reserved for focus, and a selected row is not necessarily the focused one.
 selected-color        = "#e7e7e7"
 selected-fill-alpha   = 0.14
