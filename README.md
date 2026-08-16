@@ -43,13 +43,47 @@ so that an addition still reads as the lighter of the pair when hue is gone.
 Five wallpapers, each a different geometry, all rendered natively at
 6016 × 3384 (16:9 6K).
 
-| File | Geometry | Mean luminance |
-|------|----------|----------------|
-| `1-terminator.png` | Gradient: one light source, one falloff | 0.0089 |
-| `2-ladder.png` | Flat planes: the surface ladder made literal | 0.0078 |
-| `3-aperture.png` | Circle: one ring on near-empty ground | 0.0045 |
-| `4-lattice.png` | Point grid: dots that report where the light is | 0.0042 |
-| `5-fold.png` | Facets: folded paper under a raking light | 0.0072 |
+They are dark by design. On a bright screen some read as almost black, which is
+the point: mean luminance stays under 0.009 so the wallpaper is ground, never
+figure.
+
+### 1-terminator
+
+![1-terminator](docs/1-terminator.webp)
+
+Gradient. One light source, one falloff, nothing else. Mean luminance 0.0089.
+
+### 2-ladder
+
+![2-ladder](docs/2-ladder.webp)
+
+Flat planes. The palette's own depth scale made literal, four panels stepping
+down L\* 3.0, 5.1, 6.8, 11.3, with a single clay rule on the leading edge.
+Mean luminance 0.0078.
+
+### 3-aperture
+
+![3-aperture](docs/3-aperture.webp)
+
+Circle. One clay ring on near-empty ground with three neutral echoes far below
+it in contrast. The quietest of the five. Mean luminance 0.0044.
+
+### 4-lattice
+
+![4-lattice](docs/4-lattice.webp)
+
+Point grid. Dots grow and warm toward a light at the upper-right thirds point,
+so the falloff reads as pattern rather than as haze. Mean luminance 0.0043.
+
+### 5-fold
+
+![5-fold](docs/5-fold.webp)
+
+Facets. Angular planes fanning from a point past the lower-right corner, each
+taking one rung of the surface ladder, one fold edge catching the accent.
+Mean luminance 0.0072.
+
+### How they are built
 
 They are procedural rather than photographic, which is what lets them hold to
 the palette exactly:
@@ -63,6 +97,15 @@ the palette exactly:
   rings. Interleaved gradient noise one output level wide, centred on zero,
   breaks the steps up. Because it is centred, a flat fill lands on an exact
   integer and stays perfectly flat.
+- **Edged in pixel space.** Every hard edge is a signed distance in pixels
+  resolved with a one-pixel box filter, not a smoothstep over normalised
+  coordinates. An edge authored the second way scales its own softness up with
+  the canvas, which at 6K means a visibly blurred line.
+- **Marked in the exact accent.** Every accent mark is literally `#d97757`, the
+  same value as `hyprland_active_border`, rather than a hand-picked
+  approximation near it. `1-terminator` is the one exception and keeps only the
+  accent's hue: it is a field rather than a mark, and the raw accent across a
+  whole glow would drop content ink to 2.46:1.
 - **Ceilinged for legibility.** `1-terminator` is capped so content ink still
   clears 4.5:1 over the brightest pixel in the frame.
 
@@ -79,6 +122,11 @@ Terminal colours render at Omarchy's stock window opacity (`0.985` focused,
 is a compositor setting shared by every Omarchy theme, not a property of this
 one. Set `opacity = "1.0 1.0"` in `~/.config/hypr/looknfeel.lua` for
 pixel-exact colour.
+
+## Support
+
+If Lamplight earned a place on your desktop, you can
+[buy me a coffee](https://buymeacoffee.com/thisisgm).
 
 ## License
 
