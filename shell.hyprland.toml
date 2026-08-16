@@ -1,0 +1,17 @@
+# Two border tokens feed every shell surface, and splitting them splits the
+# desktop into two honest categories:
+#
+#   active-border            -> transient, wants you (notifications, popups,
+#                               polkit, the lock input). Keeps the accent.
+#   active-border-foreground -> persistent cards you opened on purpose
+#                               (launcher, menus, tooltips). Goes neutral —
+#                               a terracotta outline around a full-screen
+#                               launcher would be the loudest thing on screen,
+#                               and it would be announcing something you
+#                               already know.
+#
+# #3a3a38 is the same neutral as `selection`, so every soft edge in the theme
+# is literally the same colour.
+[hyprland]
+active-border            = "#d97757"
+active-border-foreground = "#3a3a38"

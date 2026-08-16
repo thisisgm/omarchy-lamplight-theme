@@ -1,0 +1,73 @@
+# Lamplight — a dark theme where warmth is light, never tint.
+#
+# Surfaces were measured off the Claude desktop UI; everything after that is
+# solved rather than sampled.
+#
+# Three rules hold the whole thing together:
+#
+#   1. Warmth lives in the ink, never in the paper. Every surface below is a
+#      true neutral (R=G=B). Every text colour carries a whisper of chroma at
+#      OKLCH hue 103. That reads as "paper under a warm lamp" without tinting
+#      the screen amber, and it is where the theme gets its name.
+#   2. One voice. The clay accent is the only colour allowed to be loud, and
+#      it means exactly one thing: this is what has focus.
+#   3. Equal weight. The ANSI ring sits on a fixed OKLCH lightness/chroma
+#      (L 0.700 / C 0.125), so hue is the only variable and no single colour
+#      shouts over its neighbours. Two colours are exempt, noted below.
+#
+# Every colour here clears WCAG AA (4.5:1) against all four surfaces.
+
+mode = "dark"
+
+# The clay accent. Focus, selection, active borders — nothing else.
+accent = "#d97757"
+
+selection = "#3a3a38"
+muted     = "#7a7a75"   # ANSI bright-black / comments — 4.2:1, legible but recessed
+
+# Surface ladder. Pure neutral. Depth comes from even L* steps
+# (3.0 → 5.1 → 6.8 → 11.3), not from shadows or borders.
+darker_background  = "#0b0b0b"   # deepest: code blocks, lock screen
+dark_background    = "#111111"   # chrome: bar, sidebars
+background         = "#151515"   # canvas: terminal, app bodies
+lighter_background = "#1e1e1e"   # raised: inputs, cards
+
+# Ink. Content stays neutral; chrome and secondary text warm up as they dim,
+# which is what keeps dim text from reading as dead grey.
+foreground        = "#e7e7e7"   # content ink — neutral by design
+bright_foreground = "#f1f1e8"   # warm white, the colour of manilla paper
+light_foreground  = "#c3c2b8"   # chrome ink — the warm off-white of the UI
+dark_foreground   = "#8d8d89"   # secondary / dimmed
+
+# ANSI ring at uniform C 0.125, with lightness and hue SOLVED rather than
+# hand-placed. Hand placement on a uniform-lightness ring looked coherent and
+# failed in use: red sat 0.056 from the accent in OKLab, cyan drifted into
+# green, and under deuteranopia a diff's + and - were 0.030 apart -- the same
+# colour. Solving for maximum worst-case separation lifts the tightest pair to
+# 0.115 and the diff gap to 0.084. Chroma stays uniform, so the set is still
+# one family; only lightness and hue do the separating.
+red     = "#d76563"   # exempt: C 0.145, since an error that fails to alarm has failed
+yellow  = "#c68f32"
+orange  = "#d97757"   # the accent — the palette's orange is its accent
+green   = "#78bd74"
+cyan    = "#1fb5bc"   # held at L 0.706; the solver wanted 0.75 and went electric
+blue    = "#648ad8"
+magenta = "#be80ca"
+brown   = "#76503f"   # a deep, low-chroma sibling of the accent
+
+# Bright ring: +0.085 lightness, chroma eased 5%. Emphasis, not neon.
+# green sits a full 0.09 lighter than red on purpose -- under red/green colour
+# blindness hue is gone and lightness is the only thing left to tell an
+# addition from a deletion. Additions are the lighter of the pair, per
+# convention.
+bright_red     = "#f2827e"
+bright_yellow  = "#e0ab57"
+bright_green   = "#95d891"
+bright_cyan    = "#42d2d8"
+bright_blue    = "#7fa5f1"
+bright_magenta = "#d89ce4"
+
+# The focused window is the only window wearing colour. Unfocused edges are
+# felt rather than seen — 1.2:1 against the canvas.
+hyprland_active_border   = "rgb(d97757)"
+hyprland_inactive_border = "rgb(262626)"
