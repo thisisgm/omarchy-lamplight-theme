@@ -126,6 +126,7 @@ pixel-exact colour.
 ## Support
 
 If Lamplight earned a place on your desktop, you can
+[sponsor me on GitHub](https://github.com/sponsors/thisisgm) or
 [buy me a coffee](https://buymeacoffee.com/thisisgm).
 
 ## License
